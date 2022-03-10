@@ -93,6 +93,7 @@
         $(function () {
             var popover = $('[data-toggle="popover"]').popover({
                 trigger: 'hover',
+                placement: 'bottom',
                 html: true,
                 content: function(){
                     return details_in_popup($(this).data('id'));
@@ -107,7 +108,6 @@
                     url: "https://jsonplaceholder.typicode.com/posts/"+id,
                     contentType: "application/json",
                     success: function(data){
-                        console.log(data);
                         var html = `<h6>${data.title}</h6><p>${data.body}</p>`;
                         $('#'+div_id).html(html);
                     }
